@@ -1,21 +1,19 @@
-import dolarApi from "../services/dolar-api.service.js";
+import { getDolarCripto, getDolarOficial } from "../services/dolar-api.service.js";
 
-const getDolarOficial = async (req, res) => {
+export async function obtenerDolarOficial(req, res) {
     try {
-        const dolarOficial = await dolarApi.getDolarOficial();
+        const dolarOficial = await getDolarOficial();
         res.json(dolarOficial);
-    } catch (error) {
-        console.error(error);
+    } catch {
+        res.status(500).json({ error: 'Error al obtener el dolar oficial' });
     }
 }
 
-const getDolarCripto = async (req, res) => {
+export async function obtenerDolarCripto(req, res) {
     try {
-        const dolarCripto = await dolarApi.getDolarCripto();
+        const dolarCripto = await getDolarCripto();
         res.json(dolarCripto);
-    } catch (error) {
-        console.error(error);
+    } catch {
+        res.status(500).json({ error: 'Error al obtener el dolar cripto' });
     }
 }
-
-export default { getDolarOficial, getDolarCripto };
