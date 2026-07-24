@@ -1,9 +1,9 @@
-import {  Router } from 'express';
-import { obtenerDolarCripto, obtenerDolarOficial } from '../controllers/dolar-api.controller.js';
+import { Router } from 'express';
+import * as DolarApiController from '../controllers/dolar-api.controller.js';
 
 const router = Router();
 
-router.get('/dolar-oficial', obtenerDolarOficial);
-router.get('/dolar-cripto', obtenerDolarCripto);
+router.get('/dolar-oficial', DolarApiController.obtenerDolarOficial);
+router.get('/dolar-cripto', DolarApiController.obtenerDolarCripto);
 
 export default router;

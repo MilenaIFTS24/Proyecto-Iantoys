@@ -2,22 +2,24 @@ const BASE_URL = 'https://dolarapi.com';
 const DOLAR_OFICIAL = '/v1/dolares/oficial';
 const DOLAR_CRIPTO = '/v1/dolares/cripto';
 
-export async function getDolarOficial() {
-    try {
-        const response = await fetch(`${BASE_URL}${DOLAR_OFICIAL}`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-    }
-}
+export const getDolarOficial = async () => {
+    const response = await fetch(`${BASE_URL}${DOLAR_OFICIAL}`);
+    const data = await response.json();
 
-export async function getDolarCripto() {
-    try {
-        const response = await fetch(`${BASE_URL}${DOLAR_CRIPTO}`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
+    if (!data) {
+        throw new Error("No se pudo obtener el precio del dolar oficial.");
     }
-}
+
+    return data;
+};
+
+export const getDolarCripto = async () => {
+    const response = await fetch(`${BASE_URL}${DOLAR_CRIPTO}`);
+    const data = await response.json();
+
+    if (!data) {
+        throw new Error("No se pudo obtener el precio del dolar cripto.");
+    }
+
+    return data;
+};
