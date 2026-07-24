@@ -7,6 +7,7 @@ import sequelize from "./config/database.js";
 
 import dolarApiRoutes from "./routes/dolar-api.routes.js";
 import productRoutes from "./routes/producto.routes.js";
+import registroRoutes from "./routes/registro.routes.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use("/api/dolar", dolarApiRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/registro", registroRoutes);
 
 const PORT = process.env.PORT || 3000;
 

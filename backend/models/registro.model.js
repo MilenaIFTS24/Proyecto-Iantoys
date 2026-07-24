@@ -9,6 +9,10 @@ const Registro = sequelize.define('Registro', {
     },
     idProducto: {
         type: DataTypes.UUID,
+        references: {
+            model: 'Producto',
+            key: 'id'
+        },
         allownull: false
     },
     fecha: {

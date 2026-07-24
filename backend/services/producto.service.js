@@ -9,36 +9,36 @@ export const getAllProductsService = async () => {
 };
 
 export const getProductByIdService = async (id) => {
-    const product = await Producto.findByPk(id);
-    if (!product) {
+    const producto = await Producto.findByPk(id);
+    if (!producto) {
         throw new Error("Producto no encontrado.");
     }
     return product;
 };
 
 export const createProductService = async (productData) => {
-    const { nombre, categoria, descripcion, precioMercado, precioVenta, stock } = productData;
+    const { nombre, categoria, descripcion, precioMercado, precioVenta, stock, imagenes, peso, alto, ancho, largo } = productData;
 
     if (!nombre || !categoria || !descripcion || !precioMercado || !precioVenta || !stock) {
         throw new Error("Faltan datos obligatorios.");
     }
 
-    return await Producto.create({ nombre, categoria, descripcion, precioMercado, precioVenta, stock });
+    return await Producto.create({ nombre, categoria, descripcion, precioMercado, precioVenta, stock, imagenes, peso, alto, ancho, largo });
 };
 
 export const updateProductService = async (id, updateData) => {
-    const product = await Producto.findByPk(id);
-    if (!product) {
+    const producto = await Producto.findByPk(id);
+    if (!producto) {
         throw new Error("Producto no encontrado.");
     }
-    return await product.update(updateData);
+    return await producto.update(updateData);
 };
 
 export const deleteProductService = async (id) => {
-    const product = await Producto.findByPk(id);
-    if (!product) {
+    const producto = await Producto.findByPk(id);
+    if (!producto) {
         throw new Error("Producto no encontrado.");
     }
-    await product.destroy();
+    await producto.destroy();
     return { message: "Producto eliminado correctamente." };
 };
