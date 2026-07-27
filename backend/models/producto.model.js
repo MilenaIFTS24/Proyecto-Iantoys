@@ -33,7 +33,7 @@ const Producto = sequelize.define('Producto', {
         allownull: false
     },
     imagenes: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.ARRAY,
         defaultValue: [],
         allownull: true
     },

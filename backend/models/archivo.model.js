@@ -1,8 +1,41 @@
-import Multer from "multer";
+import { DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
 
-export class Archivo extends Multer.File {
-    constructor(id, fieldname, originalname, encoding, mimetype, buffer, size, destination, filename, path) {
-        super(fieldname, originalname, encoding, mimetype, buffer, size, destination, filename, path);
-        this.id = id;
-    }
+const Archivo = sequelize.define("Archivo", {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
+    },
+    productID: {
+        type: DataTypes.UUID,
+        references: {
+            model: "Producto",
+            key: "id"
+        },
+        allownull: false
+    },
+    nombre: {
+        type: DataTypes.STRING,
+        allownull: false
+    },
+    url: {
+        type: DataTypes.STRING,
+        allownull: false
+    },
+    size: {
+        type: DataTypes.INTEGER,
+        allownull: true
+    },
+    mimetype: {
+        type: DataTypes.STRING,
+        allownull: true
+    },
+
+},{
+    tableName: "Archivo",
+    timestamps: true
 }
+);
+
+export default Archivo;
