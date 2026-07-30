@@ -19,6 +19,7 @@ app.use(cors());
 app.use("/api/dolar", dolarApiRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/registro", registroRoutes);
+app.get("/", (req, res) => res.send("Hello World!"));
 
 const PORT = process.env.PORT || 3000;
 

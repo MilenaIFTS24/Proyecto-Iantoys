@@ -13,63 +13,63 @@ const Registro = sequelize.define('Registro', {
             model: 'Producto',
             key: 'id'
         },
-        allownull: false
+        allowNull: false
     },
     fecha: {
         type: DataTypes.DATE,
-        allownull: false
+        allowNull: false
     },
     precioMercadoUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     precioVenta: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     precioVentaUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     porcentajeGanancia: {
-        type: dataTypes.PERCENT,
-        allownull: false
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     ganancia: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     gananciaUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     totalGananciaMes: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     totalGananciaMesUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     totalGastoMes: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     totalGastoMesUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     balanceFinal: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     balanceFinalUSD: {
-        type: dataTypes.FLOAT,
-        allownull: false
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     estado: {
         type: DataTypes.ENUM('PEDIDO', 'RECIBIDO', 'VENDIDO', 'FINALIZADO'),
-        allownull: false
+        allowNull: false
     }
 }, {
     tableName: 'Registro',

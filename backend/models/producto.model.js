@@ -9,49 +9,49 @@ const Producto = sequelize.define('Producto', {
     },
     nombre: {
         type: DataTypes.STRING,
-        allownull: false
+        allowNull: false
     },
     categoria: {
         type: DataTypes.ENUM('MARVEL', 'DC', 'POKEMON', 'MARVEL LEGENDS', 'DRAGON BALL', 'CT TOYS', 'MESS TOYS', 'AC TOYS', 'MAX FACTORY', 'BOOTLEGS'),
-        allownull: false
+        allowNull: false
     },
     descripcion: {
         type: DataTypes.TEXT,
-        allownull: false
+        allowNull: false
     },
     precioMercado: {
         type: DataTypes.FLOAT,
-        allownull: false
+        allowNull: false
     },
     precioVenta: {
         type: DataTypes.FLOAT,
-        allownull: false
+        allowNull: false
     },
     stock: {
         type: DataTypes.INTEGER,
         defaultValue: 0,
-        allownull: false
+        allowNull: false
     },
     imagenes: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         defaultValue: [],
-        allownull: true
+        allowNull: true
     },
     peso: {
         type: DataTypes.FLOAT,
-        allownull: true
+        allowNull: true
     },
     alto: {
         type: DataTypes.FLOAT,
-        allownull: true
+        allowNull: true
     },
     ancho: {
         type: DataTypes.FLOAT,
-        allownull: true
+        allowNull: true
     },
     largo: {
         type: DataTypes.FLOAT,
-        allownull: true
+        allowNull: true
     }
 }, {
     tableName: 'Producto',
